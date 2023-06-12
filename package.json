@@ -11,7 +11,7 @@
         "url": "https://github.com/inqueryio/ui-library/issues"
     },
     "homepage": "https://github.com/inqueryio/ui-library#readme",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "",
     "main": "build/index.js",
     "module": "build/index.esm.js",
