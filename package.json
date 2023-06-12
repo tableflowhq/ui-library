@@ -24,6 +24,9 @@
         "react-dom": ">=18.2.0",
         "zustand": "^4.3.8"
     },
+    "publishConfig": {
+        "@inqueryio:registry": "https://npm.pkg.github.com"
+    },
     "devDependencies": {
         "@babel/preset-env": "^7.22.4",
         "@babel/preset-react": "^7.22.3",
