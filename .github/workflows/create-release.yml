@@ -4,7 +4,7 @@ name: Create Release on Push
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   release-on-push:
