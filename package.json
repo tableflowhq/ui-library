@@ -1,5 +1,5 @@
 {
-    "name": "@tableflow/ui-library",
+    "name": "@inqueryio/ui-library",
     "version": "1.0.0",
     "description": "",
     "main": "build/index.js",
