@@ -12,11 +12,11 @@ export default function Tabs({ tabs, tab, setTab, onChange, children }: TabsProp
                         type="button"
                         className={classes([style.tabBtn, tabs[k] === tab && style.active])}
                         onClick={() => {
-                            if (setTab) setTab(tabs[k]);
-                            if (onChange) onChange(tabs[k]);
+                            if (setTab) setTab(k);
+                            if (onChange) onChange(k);
                         }}
-                        disabled={tabs[k] === tab}>
-                        {k}
+                        disabled={k === tab}>
+                        {tabs[k]}
                     </button>
                 ))}
             </div>
