@@ -10,7 +10,7 @@ export default function Tabs({ tabs, tab, setTab, onChange, children }: TabsProp
                     <button
                         key={k}
                         type="button"
-                        className={classes([style.tabBtn, tabs[k] === tab && style.active])}
+                        className={classes([style.tabBtn, k === tab && style.active])}
                         onClick={() => {
                             if (setTab) setTab(k);
                             if (onChange) onChange(k);
