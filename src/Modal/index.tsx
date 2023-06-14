@@ -23,6 +23,7 @@ export default function Modal({
     useBox = true,
     useCloseButton,
     usePortal = true,
+    openDelayed,
     ...props
 }: ModalProps): React.ReactElement {
     const className = classes([style.container, isOpen ? style.isOpen : style.isClosing, props?.className]);
