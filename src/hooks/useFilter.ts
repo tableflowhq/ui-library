@@ -1,14 +1,14 @@
 import { useMemo, useState } from "react";
 import { DataType } from "../types/global";
 
-export default function useFilter(filterByColumns: string[], data: DataType) {
+export default function useFilter<T>(filterByColumns: string[], data: Record<string, any>[]) {
     const [filter, setFilter] = useState("");
 
     const dataFiltered = useMemo(() => {
         return filterData(data, filter, filterByColumns);
     }, [JSON.stringify(data), filter]);
 
-    return { dataFiltered, setFilter };
+    return { dataFiltered: dataFiltered as T, setFilter };
 }
 
 const filterData = (data: DataType, filter: string, filterByColumns: string[]): DataType =>

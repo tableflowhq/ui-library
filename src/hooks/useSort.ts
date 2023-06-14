@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { DataType } from "../Pagination/hooks/useSyncPagination";
+import { DataType } from "../types/global";
 
-export default function useSort(data: DataType, initialSortKey = "", initialSortAsc = true) {
+export default function useSort<T>(data: Record<string, any>[], initialSortKey = "", initialSortAsc = true) {
     const [sortKey, setSortKey] = useState(initialSortKey);
     const [sortAsc, setSortAsc] = useState(initialSortAsc);
 
@@ -15,7 +15,7 @@ export default function useSort(data: DataType, initialSortKey = "", initialSort
         setSortAsc(sortAsc);
     };
 
-    return { dataSorted, setSort, sortKey, sortAsc };
+    return { dataSorted: dataSorted as T, setSort, sortKey, sortAsc };
 }
 
 const sortData = (data: DataType, sortBy: string): DataType => {
