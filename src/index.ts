@@ -6,8 +6,23 @@ import useSyncPagination from "./Pagination/hooks/useSyncPagination";
 import useStepper from "./Stepper/hooks/useStepper";
 import useThemeStore from "./Stores/useThemeStore";
 import useTabs from "./Tabs/hooks/useTabs";
+import useClickOutside from "./hooks/useClickOutside";
+import useDelayUnmount from "./hooks/useDelayUnmount";
+import useEntitySelection from "./hooks/useEntitySelection";
 import useFilter from "./hooks/useFilter";
+import useLocalStorage from "./hooks/useLocalStorage";
+import useSearchParams from "./hooks/useSearchParams";
 import useSort from "./hooks/useSort";
+import capitalize from "./utils/capitalize";
+import classes from "./utils/classes";
+import collectionCountLabel from "./utils/collectionCountLabel";
+import padNum from "./utils/padNum";
+import setTheme from "./utils/setTheme";
+import stringsSimilarity from "./utils/stringSimilarity";
+import { timeToText } from "./utils/time";
+import timestampDisplay from "./utils/timestampDisplay";
+import isValidEmail, { validateEmails } from "./utils/validateEmail";
+import validatePassword from "./utils/validatePassword";
 import "./style/index.scss";
 import Badge from "./Badge";
 import Box from "./Box";
@@ -34,27 +49,49 @@ export {
     Button,
     Dialog,
     Errors,
+    Frame,
     Icon,
     Input,
-    Tableflow,
     Loader,
+    Main,
     Modal,
     Pagination,
     Portal,
     Stepper,
     Switch,
     Table,
+    Tableflow,
     Tabs,
     TagEditor,
-    Main,
-    Frame,
     ThemeToggle,
-    useTabs,
+};
+
+export {
+    useClickOutside,
+    useDelayUnmount,
+    useEntitySelection,
+    useFilter,
+    useLocalStorage,
+    useModal,
+    usePassword,
+    useSearchParams,
+    useSort,
     useStepper,
     useSyncPagination,
-    useSort,
-    useFilter,
-    usePassword,
-    useModal,
+    useTabs,
     useThemeStore,
+};
+
+export {
+    capitalize,
+    classes,
+    collectionCountLabel,
+    padNum,
+    setTheme,
+    stringsSimilarity,
+    timeToText,
+    timestampDisplay,
+    isValidEmail,
+    validateEmails,
+    validatePassword,
 };
