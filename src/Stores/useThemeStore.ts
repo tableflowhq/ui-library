@@ -11,7 +11,7 @@ type themeStoreType = {
 const useThemeStore = create<themeStoreType>()(
     persist(
         (set) => ({
-            theme: "light" || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
+            theme: window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light",
             setTheme: (newTheme) =>
                 set((state) => {
                     const theme = newTheme || (state.theme === "light" ? "dark" : "light");

@@ -1,0 +1,55 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+}
+.storybook-top {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--m);
+    z-index: 11;
+    position: relative;
+}
+.storybook-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: var(--m) 0;
+}
+pre {
+    text-align: initial;
+}
+.storybook-icons-header {
+    width: 128px;
+    height: 128px;
+    display: inline-flex;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--m);
+    align-items: center;
+    justify-content: center;
+}
+.storybook-icons-set {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+.storybook-icons-set > span {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.storybook-icons-set svg {
+    object-fit: contain;
+    object-position: center center;
+    margin: 12px;
+    overflow: hidden;
+    width: 38px;
+    object-fit: contain;
+}
