@@ -2123,62 +2123,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@inqueryio/ui-library@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@inqueryio/ui-library@workspace:."
-  dependencies:
-    "@babel/preset-env": ^7.22.4
-    "@babel/preset-react": ^7.22.3
-    "@babel/preset-typescript": ^7.21.5
-    "@rollup/plugin-commonjs": ^17.1.0
-    "@rollup/plugin-image": ^2.1.1
-    "@rollup/plugin-node-resolve": ^11.2.1
-    "@storybook/addon-essentials": 7.0.18
-    "@storybook/addon-interactions": 7.0.18
-    "@storybook/addon-links": 7.0.18
-    "@storybook/addon-styling": ^1.0.8
-    "@storybook/blocks": 7.0.18
-    "@storybook/react": 7.0.18
-    "@storybook/react-webpack5": 7.0.18
-    "@storybook/testing-library": 0.0.14-next.2
-    "@svgr/rollup": ^8.0.1
-    "@trivago/prettier-plugin-sort-imports": ^4.1.1
-    "@types/react": ^18.0.0
-    "@types/react-dom": ^18.0.0
-    "@types/use-sync-external-store": 0.0.3
-    "@typescript-eslint/eslint-plugin": ^5.56.0
-    "@typescript-eslint/parser": ^5.56.0
-    core-js: ^3.22.7
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.2
-    identity-obj-proxy: ^3.0.0
-    prettier: ^2.8.6
-    prop-types: ^15.8.1
-    react: ">=18.2.0"
-    react-dom: ">=18.2.0"
-    react-focus-lock: ^2.9.4
-    rollup: ^2.56.3
-    rollup-plugin-copy: ^3.4.0
-    rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss: ^3.1.8
-    rollup-plugin-typescript2: ^0.29.0
-    sass: ^1.62.1
-    sass-loader: ^10.2.0
-    storybook: 7.0.18
-    style-loader: ^2.0.0
-    tslib: ^2.5.3
-    typescript: ^4.5.5
-    typescript-plugin-css-modules: ^3.4.0
-    use-sync-external-store: ^1.2.0
-    zustand: ^4.3.8
-  peerDependencies:
-    react: ">=18.2.0"
-    react-dom: ">=18.2.0"
-    zustand: ^4.3.8
-  languageName: unknown
-  linkType: soft
-
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -4009,6 +3953,62 @@ __metadata:
   checksum: aad7923a1b7f12c2329019cb1251c6058dae842269d9281de26e83dfff0246a412cc6102af2434b477a2377303af25d741bce23bd45fdb948c3ef7d56d766ec9
   languageName: node
   linkType: hard
+
+"@tableflow/ui-library@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@tableflow/ui-library@workspace:."
+  dependencies:
+    "@babel/preset-env": ^7.22.4
+    "@babel/preset-react": ^7.22.3
+    "@babel/preset-typescript": ^7.21.5
+    "@rollup/plugin-commonjs": ^17.1.0
+    "@rollup/plugin-image": ^2.1.1
+    "@rollup/plugin-node-resolve": ^11.2.1
+    "@storybook/addon-essentials": 7.0.18
+    "@storybook/addon-interactions": 7.0.18
+    "@storybook/addon-links": 7.0.18
+    "@storybook/addon-styling": ^1.0.8
+    "@storybook/blocks": 7.0.18
+    "@storybook/react": 7.0.18
+    "@storybook/react-webpack5": 7.0.18
+    "@storybook/testing-library": 0.0.14-next.2
+    "@svgr/rollup": ^8.0.1
+    "@trivago/prettier-plugin-sort-imports": ^4.1.1
+    "@types/react": ^18.0.0
+    "@types/react-dom": ^18.0.0
+    "@types/use-sync-external-store": 0.0.3
+    "@typescript-eslint/eslint-plugin": ^5.56.0
+    "@typescript-eslint/parser": ^5.56.0
+    core-js: ^3.22.7
+    eslint-config-prettier: ^8.8.0
+    eslint-plugin-prettier: ^4.2.1
+    eslint-plugin-react: ^7.32.2
+    identity-obj-proxy: ^3.0.0
+    prettier: ^2.8.6
+    prop-types: ^15.8.1
+    react: ">=18.2.0"
+    react-dom: ">=18.2.0"
+    react-focus-lock: ^2.9.4
+    rollup: ^2.56.3
+    rollup-plugin-copy: ^3.4.0
+    rollup-plugin-peer-deps-external: ^2.2.4
+    rollup-plugin-postcss: ^3.1.8
+    rollup-plugin-typescript2: ^0.29.0
+    sass: ^1.62.1
+    sass-loader: ^10.2.0
+    storybook: 7.0.18
+    style-loader: ^2.0.0
+    tslib: ^2.5.3
+    typescript: ^4.5.5
+    typescript-plugin-css-modules: ^3.4.0
+    use-sync-external-store: ^1.2.0
+    zustand: ^4.3.8
+  peerDependencies:
+    react: ">=18.2.0"
+    react-dom: ">=18.2.0"
+    zustand: ^4.3.8
+  languageName: unknown
+  linkType: soft
 
 "@testing-library/dom@npm:^8.3.0":
   version: 8.20.0

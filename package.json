@@ -1,16 +1,16 @@
 {
-    "name": "@inqueryio/ui-library",
+    "name": "@tableflow/ui-library",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/inqueryio/ui-library.git"
+        "url": "git+https://github.com/tableflowhq/ui-library.git"
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com"
     },
     "bugs": {
-        "url": "https://github.com/inqueryio/ui-library/issues"
+        "url": "https://github.com/tableflowhq/ui-library/issues"
     },
-    "homepage": "https://github.com/inqueryio/ui-library#readme",
+    "homepage": "https://github.com/tableflowhq/ui-library#readme",
     "version": "1.9.0",
     "description": "",
     "main": "build/index.js",
