@@ -22,6 +22,7 @@ export default function Dialog({
 
     const handleClick = (item: DialogItem) => () => {
         item?.action && item.action(item.id || null);
+        item?.onClick && item.onClick((item.id || null) as any);
         setOpen(false);
     };
 
@@ -44,12 +45,12 @@ export default function Dialog({
                         return !active || !useActiveAsLabel ? (
                             <Button
                                 {...props}
-                                variants={["bare", "alignLeft"]}
+                                variants={props.variants || ["bare", "alignLeft"]}
                                 type="button"
                                 key={i}
                                 onClick={handleClick(item)}
-                                className={classes([style.item, active && style.active])}
-                                iconPosition="right">
+                                className={classes([props?.className, style.item, active && style.active])}
+                                iconPosition={props?.iconPosition || "right"}>
                                 {item.children}
                             </Button>
                         ) : null;
