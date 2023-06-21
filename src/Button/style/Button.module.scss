@@ -124,6 +124,11 @@
         }
     }
 
+    &.square {
+        padding: 0 var(--m-xxxs);
+        aspect-ratio: 1;
+    }
+
     &.fullWidth {
         width: 100%;
     }

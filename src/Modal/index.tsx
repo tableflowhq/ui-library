@@ -4,6 +4,7 @@ import classes from "../utils/classes";
 import { ModalProps } from "./types";
 import style from "./style/Modal.module.scss";
 import Box from "../Box";
+import Button from "../Button";
 import Icon from "../Icon";
 import Portal from "../Portal";
 
@@ -57,9 +58,7 @@ export default function Modal({
                 <div className={style.veil} onClick={() => handleClose && handleClose()} />
                 <Element className={style.content}>
                     {useCloseButton && (
-                        <button type="button" onClick={handleClose} className={style.close}>
-                            <Icon icon="cross" />
-                        </button>
+                        <Button type="button" icon="cross" onClick={handleClose} className={style.close} variants={["bare", "square"]} />
                     )}
                     {children}
                 </Element>

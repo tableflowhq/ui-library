@@ -1,28 +1,23 @@
 const config = {
     stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-    webpackFinal: async (config) => {
-        // remove svg from existing rule
-        config.module.rules = config.module.rules.map((rule) => {
-            if (String(rule.loader).indexOf("file-loader") > -1) {
-                return {
-                    ...rule,
-                    test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/,
-                };
+    webpackFinal: (webpackConfig) => {
+        // This modifies the existing image rule to exclude `.svg` files
+        // since we handle those with `@svgr/webpack`.
+        const imageRule = webpackConfig.module.rules.find((rule) => {
+            if (typeof rule !== "string" && rule.test instanceof RegExp) {
+                return rule.test.test(".svg");
             }
-            return rule;
         });
+        if (typeof imageRule !== "string") {
+            imageRule.exclude = /\.svg$/;
+        }
 
-        /* // use svgr for svg files
-        config.module.rules.push({
-          test: /\.svg$/,
-          use: [{
-            loader: "@svgr/webpack",
-            options: {
-              viewBox: true
-            }
-          }, "url-loader"]
-        });*/
-        return config;
+        // webpackConfig.module.rules.push({
+        //     test: /\.svg$/,
+        //     use: ["@svgr/webpack", "url-loader"],
+        // });
+
+        return webpackConfig;
     },
     addons: [
         "@storybook/addon-links",
