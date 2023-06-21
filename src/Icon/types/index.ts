@@ -35,7 +35,8 @@ export type IconType =
     | "select"
     | "insert"
     | "update"
-    | "delete";
+    | "delete"
+    | "copy";
 
 export type IconProps = React.SVGProps<SVGSVGElement> & {
     icon?: IconType;
@@ -57,6 +58,7 @@ const iconsArray = [
     "eyesClosed",
     "eyesOpen",
     "google",
+    "github",
     "help",
     "moon",
     "sun",
@@ -71,10 +73,19 @@ const iconsArray = [
     "clock",
     "userSimple",
     "check",
+    "upload",
+    "download",
+    "logOut",
+    "share",
+    "edit",
+    "cube",
+    "code",
+    "link",
     "select",
     "insert",
     "update",
     "delete",
+    "copy",
 ].sort() as IconType[];
 
 export { iconsArray };

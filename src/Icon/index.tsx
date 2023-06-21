@@ -11,6 +11,7 @@ import { ReactComponent as Bell } from "../assets/icons/bell.svg";
 import { ReactComponent as Check } from "../assets/icons/check.svg";
 import { ReactComponent as Clock } from "../assets/icons/clock.svg";
 import { ReactComponent as Code } from "../assets/icons/code.svg";
+import { ReactComponent as Copy } from "../assets/icons/copy.svg";
 import { ReactComponent as Cross } from "../assets/icons/cross.svg";
 import { ReactComponent as Cube } from "../assets/icons/cube.svg";
 import { ReactComponent as Database } from "../assets/icons/database.svg";
@@ -77,6 +78,7 @@ const iconMap: IconMap = {
     cube: Cube,
     code: Code,
     link: Link,
+    copy: Copy,
 };
 
 export default function Icon({ icon, className, size, ...props }: IconProps) {
