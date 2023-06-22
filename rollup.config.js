@@ -31,17 +31,11 @@ export default {
         image(),
         svgr({
             icon: false,
-            svgoConfig: {
-                plugins: [
-                    // {
-                    //     name: "removeViewBox",
-                    //     active: false,
-                    // },
-                ],
-            },
         }),
         postcss({
             modules: true,
+            extract: true,
+            minimize: true,
         }),
         copy({
             targets: [{ src: "src/style", dest: "build" }],
