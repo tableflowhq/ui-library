@@ -31,6 +31,14 @@ export default {
         image(),
         svgr({
             icon: false,
+            svgoConfig: {
+                plugins: [
+                    // {
+                    //     name: "removeViewBox",
+                    //     active: false,
+                    // },
+                ],
+            },
         }),
         postcss({
             modules: true,
