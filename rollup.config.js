@@ -34,8 +34,6 @@ export default {
         }),
         postcss({
             modules: true,
-            extract: true,
-            minimize: true,
         }),
         copy({
             targets: [{ src: "src/style", dest: "build" }],
