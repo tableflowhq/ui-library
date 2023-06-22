@@ -24,11 +24,11 @@
 }
 
 :global {
-    body[data-theme="light"] & {
-        svg {
-            path.letter {
-                fill: var(--color-tableflow-text) !important;
-            }
+    //body[data-theme="light"] & {
+    svg {
+        path.letter {
+            fill: var(--color-tableflow-text) !important;
         }
     }
+    //}
 }

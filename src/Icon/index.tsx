@@ -22,6 +22,7 @@ import { ReactComponent as Ellipsis } from "../assets/icons/ellipsis.svg";
 import { ReactComponent as Error } from "../assets/icons/error.svg";
 import { ReactComponent as EyeClosed } from "../assets/icons/eye-closed.svg";
 import { ReactComponent as EyeOpen } from "../assets/icons/eye-open.svg";
+import { ReactComponent as File } from "../assets/icons/file.svg";
 import { ReactComponent as Gear } from "../assets/icons/gear.svg";
 import { ReactComponent as Help } from "../assets/icons/help.svg";
 import { ReactComponent as Insert } from "../assets/icons/insert.svg";
@@ -79,6 +80,7 @@ const iconMap: IconMap = {
     code: Code,
     link: Link,
     copy: Copy,
+    file: File,
 };
 
 export default function Icon({ icon, className, size, ...props }: IconProps) {

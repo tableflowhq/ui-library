@@ -8,7 +8,6 @@ export default {
     argTypes: {
         variants: {
             control: {
-                type: "check",
                 options: badgeVariants,
             },
             description: "Style variants",
@@ -30,4 +29,5 @@ const Template: ComponentStory<typeof BadgeComponent> = (args: BadgeProps) => <B
 export const Badge = Template.bind({});
 Badge.args = {
     children: "Hello World!",
+    variants: [],
 };

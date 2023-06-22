@@ -52,7 +52,7 @@ const Template: ComponentStory<typeof ButtonComponent> = (args: ButtonProps) => 
 export const Button = Template.bind({});
 Button.args = {
     children: "Hello World!",
-    variants: ["primary"],
+    variants: ["noFill"],
     iconPosition: "left",
     disabled: false,
 };

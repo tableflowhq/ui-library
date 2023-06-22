@@ -20,9 +20,9 @@ export const Default: ComponentStory<typeof Switch> = (args) => {
     );
 };
 
-Default.argTypes = {
-    disabled: { type: "boolean" },
-    label: { defaultValue: "Switch" },
-    onChange: { control: { type: null } },
-    checked: { control: { type: null } },
+Default.args = {
+    inputFirst: true,
+    disabled: false,
+    label: "Switch",
+    checked: true,
 };

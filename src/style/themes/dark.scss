@@ -9,6 +9,7 @@
     --color-background-modal-hover: #2e323c;
     --color-background-modal-veil: #0e1116;
     --color-background-modal-shadow: #0e1116;
+    --color-background-modal-shade: #171a20;
 
     --color-tertiary: #{$gray-900};
     --color-tertiary-hover: #{$gray-800};
@@ -74,7 +75,7 @@
 
     // BRAND
 
-    --color-tableflow-text: #{$base-white};
+    --color-tableflow-text: var(--color-text);
 
     // STEPPER
 

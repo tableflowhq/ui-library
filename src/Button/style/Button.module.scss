@@ -34,9 +34,14 @@
     }
 
     .icon {
-        svg {
+        svg:not([data-stroke="no-stroke"]) {
             path {
                 stroke: currentColor;
+            }
+        }
+        svg:is([data-stroke="no-stroke"]):not([data-fill="no-fill"]) {
+            path {
+                fill: currentColor;
             }
         }
     }
@@ -113,6 +118,17 @@
 
         &:hover {
             color: var(--color-text);
+        }
+    }
+
+    &.noFill {
+        background-color: transparent;
+        border-color: var(--color-border);
+        color: var(--color-text);
+
+        &:hover {
+            color: var(--color-text);
+            border-color: var(--color-text-soft);
         }
     }
 

@@ -11,7 +11,7 @@ export default function Button({ children, icon, className, variants = [], iconP
 
     const iconElement = (
         <span className={style.icon}>
-            <Icon icon={iconId} />
+            <Icon icon={iconId} size="s" />
         </span>
     );
 

@@ -15,7 +15,8 @@ export type buttonVariant =
     | "sortUp"
     | "sortDown"
     | "alignLeft"
-    | "alignRight";
+    | "alignRight"
+    | "noFill";
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     variants?: buttonVariant[];
@@ -38,4 +39,5 @@ export const buttonVariants = [
     "sortDown",
     "alignLeft",
     "alignRight",
+    "noFill",
 ];

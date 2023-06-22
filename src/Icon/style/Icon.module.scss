@@ -2,6 +2,14 @@
     object-fit: contain;
     object-position: 50% 50%;
 
+    &:not([data-stroke="no-stroke"]) {
+        stroke: currentColor;
+    }
+
+    &:is([data-stroke="no-stroke"]):not([data-fill="no-fill"]) {
+        fill: currentColor;
+    }
+
     &.xxs {
         width: 8px;
         height: 8px;

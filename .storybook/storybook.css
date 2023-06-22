@@ -46,10 +46,10 @@ pre {
     font-size: 12px;
 }
 .storybook-icons-set svg {
-    object-fit: contain;
     object-position: center center;
     margin: 12px;
     overflow: hidden;
     width: 38px;
     object-fit: contain;
+    color: white;
 }
