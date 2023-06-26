@@ -5,38 +5,39 @@ type Style = { readonly [key: string]: string };
 type Primitive = string | number | boolean | null | undefined;
 
 export type TableComposite = {
-  raw: Primitive;
-  content: Primitive | React.ReactElement;
+    raw: Primitive;
+    content: Primitive | React.ReactElement;
 };
 
 export type TableValue = Primitive | TableComposite;
 
 export type TableDatum = {
-  [key: string]: TableValue;
+    [key: string]: TableValue;
 };
 
 export type TableData = TableDatum[];
 
 export type TableProps = {
-  data: TableData;
-  keyAsId?: string;
-  theme?: Style;
-  mergeThemes?: boolean;
-  highlightColumns?: string[];
-  hideColumns?: string[];
-  emptyState?: ReactElement;
-  heading?: ReactElement;
-  background?: "zebra" | "dark" | "light";
-  columnWidths?: string[];
-  columnAlignments?: ("left" | "center" | "right" | "")[];
+    data: TableData;
+    keyAsId?: string;
+    theme?: Style;
+    mergeThemes?: boolean;
+    highlightColumns?: string[];
+    hideColumns?: string[];
+    emptyState?: ReactElement;
+    heading?: ReactElement;
+    background?: "zebra" | "dark" | "light";
+    columnWidths?: string[];
+    columnAlignments?: ("left" | "center" | "right" | "")[];
+    fixHeader?: boolean;
 };
 
 export type RowProps = {
-  datum: TableDatum;
-  isHeading?: boolean;
+    datum: TableDatum;
+    isHeading?: boolean;
 };
 
 export type CellProps = PropsWithChildren<{
-  cellClass?: string;
-  cellStyle: Style;
+    cellClass?: string;
+    cellStyle: Style;
 }>;

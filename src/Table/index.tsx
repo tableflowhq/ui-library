@@ -17,6 +17,7 @@ export default function Table({
     background = "zebra",
     columnWidths = [],
     columnAlignments = [],
+    fixHeader = false,
 }: TableProps): React.ReactElement {
     // THEME
     // Tables receive a full CSS module as theme or applies default styles
@@ -41,7 +42,7 @@ export default function Table({
 
     if (!data || !data?.length) return <div className={style.emptyMsg}>{emptyState || null}</div>;
 
-    const tableStyle = classes([style?.table, style?.[background]]);
+    const tableStyle = classes([style?.table, style?.[background], fixHeader && style?.fixHeader]);
 
     const headingContent = heading ? (
         <div className={style.caption}>{heading}</div>

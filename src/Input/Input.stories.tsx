@@ -114,10 +114,18 @@ Password.args = {
 
 export const Dropdown: ComponentStory<typeof InputComponent> = (args: InputProps) => {
     const [value, setValue] = useState<any>("");
-    return <InputComponent {...args} value={value} onChange={(e) => setValue(e)} />;
+    return (
+        <>
+            <InputComponent {...args} value={value} onChange={(e) => setValue(e)} />
+            {/* <div style={{ height: "30vh", overflowY: "scroll" }}>
+                <div style={{ padding: "60vh 1rem 1rem" }}>
+                    <InputComponent {...args} value={value} onChange={(e) => setValue(e)} />
+                </div>
+            </div> */}
+        </>
+    );
 };
 Dropdown.args = {
-    label: "Label Text",
     placeholder: "Placeholder Text",
     disabled: false,
     options: {

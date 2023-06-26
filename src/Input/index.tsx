@@ -50,14 +50,10 @@ export default function Input({ as = "input", label, icon, iconAfter, error, opt
 
     return (
         <div className={containerClassName}>
-            {label ? (
-                <label>
-                    <span className={style.label}>{label}</span>
-                    {inputWrapper}
-                </label>
-            ) : (
-                inputWrapper
-            )}
+            <label>
+                {label ? <span className={style.label}>{label}</span> : null}
+                {inputWrapper}
+            </label>
             {error && <div className={style.error}>{error}</div>}
             {children && <div className={style.footer}>{children}</div>}
         </div>
@@ -77,19 +73,21 @@ function Select({ options = {}, ...props }: InputProps) {
 
     const [setRef, size, updateRect] = useRect();
 
-    const [setRefPortal, sizePortal] = useRect();
+    const [setRefPortal, sizePortal, updatePortalRect] = useRect();
 
     const windowSize = useWindowSize();
 
-    const top = size.top + sizePortal.height > windowSize[1] - 4 ? windowSize[1] - sizePortal.height - 4 : size.top + 4;
+    const top = size.y + sizePortal.height > windowSize[1] - 4 ? windowSize[1] - sizePortal.height - 4 : size.y + 4;
 
     const optionsPosition = {
         top: `${top}px`,
-        left: `${size?.left}px`,
+        left: `${size?.x}px`,
         width: `${size?.right - size?.left}px`,
     };
 
     const onFocus = () => {
+        updateRect();
+        updatePortalRect();
         setOpen(true);
     };
 

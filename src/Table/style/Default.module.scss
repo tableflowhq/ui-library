@@ -12,6 +12,7 @@ $radius: var(--border-radius-2);
     .thead {
         display: table-header-group;
     }
+
     .tbody {
         display: table-row-group;
     }
@@ -42,15 +43,31 @@ $radius: var(--border-radius-2);
                 border-bottom: 1px solid var(--color-border);
                 background-color: var(--color-background-modal);
                 color: var(--color-text-soft);
-
-                &:first-of-type {
-                    border-radius: $radius 0 0 0;
-                }
-
-                &:last-child {
-                    border-radius: 0 $radius 0 0;
-                }
             }
+        }
+    }
+
+    &.fixHeader {
+        border-radius: 0 0 $radius $radius;
+        .thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            outline: 1px solid var(--color-border);
+        }
+    }
+
+    &:not(.fixHeader) .thead {
+        .tr {
+            // .td {
+            //     &:first-of-type {
+            //         border-radius: $radius 0 0 0;
+            //     }
+
+            //     &:last-child {
+            //         border-radius: 0 $radius 0 0;
+            //     }
+            // }
         }
     }
 
