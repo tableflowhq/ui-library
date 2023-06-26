@@ -1,7 +1,12 @@
+import { useRef, useState } from "react";
+import useClickOutside from "../hooks/useClickOutside";
+import useRect from "../hooks/useRect";
+import useWindowSize from "../hooks/useWindowSize";
 import classes from "../utils/classes";
 import { InputProps } from "./types";
 import style from "./style/Input.module.scss";
 import Icon from "../Icon";
+import Portal from "../Portal";
 
 export default function Input({ as = "input", label, icon, iconAfter, error, options, className, variants = [], children, ...props }: InputProps) {
     const Element = as;
@@ -60,30 +65,67 @@ export default function Input({ as = "input", label, icon, iconAfter, error, opt
 }
 
 function Select({ options = {}, ...props }: InputProps) {
+    const [open, setOpen] = useState(false);
+
     const onChangeOption = (e: any) => {
         const { value } = e.target;
         props?.onChange && props?.onChange(value);
-        e.target.blur();
+        onBlur();
     };
 
     const selectedKey = Object.keys(options).find((k) => options[k].value === props.value) || "";
 
+    const [setRef, size, updateRect] = useRect();
+
+    const [setRefPortal, sizePortal] = useRect();
+
+    const windowSize = useWindowSize();
+
+    const top = size.top + sizePortal.height > windowSize[1] - 4 ? windowSize[1] - sizePortal.height - 4 : size.top + 4;
+
+    const optionsPosition = {
+        top: `${top}px`,
+        left: `${size?.left}px`,
+        width: `${size?.right - size?.left}px`,
+    };
+
+    const onFocus = () => {
+        setOpen(true);
+    };
+
+    const onBlur = () => {
+        setOpen(false);
+    };
+
+    const ref = useRef(null);
+
+    useClickOutside(ref, onBlur);
+
     return (
         <>
-            <input {...props} value={selectedKey} className={style.select} readOnly />
+            <input {...props} value={selectedKey} className={classes([style.select, open && style.open])} readOnly onFocus={onFocus} />
 
-            <div className={style.options}>
-                {Object.keys(options).map((k) => (
-                    <button
-                        key={k}
-                        className={classes([style.option, options[k].value === props.value && style.selected])}
-                        type="button"
-                        {...options[k]}
-                        onClick={onChangeOption}>
-                        {k}
-                    </button>
-                ))}
-            </div>
+            <div className={style.optionsRef} ref={setRef} />
+
+            {open && (
+                <Portal>
+                    <div className={style.options} style={optionsPosition} ref={setRefPortal}>
+                        <div className={style.inner} ref={ref}>
+                            {Object.keys(options).map((k, i) => (
+                                <button
+                                    key={k}
+                                    className={classes([style.option, options[k].value === props.value && style.selected])}
+                                    type="button"
+                                    {...options[k]}
+                                    onClick={onChangeOption}
+                                    autoFocus={i === 0}>
+                                    {k}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </Portal>
+            )}
         </>
     );
 }
