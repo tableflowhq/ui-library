@@ -1,18 +1,24 @@
 {
-    "name": "@tableflowhq/ui-library",
+    "name": "@tableflow/ui-library",
+    "version": "1.25.0",
+    "description": "A library of frontend components used by TableFlow",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tableflowhq/ui-library.git"
     },
+    "keywords": [
+        "tableflow",
+        "ui-library"
+    ],
+    "author": "TableFlow",
+    "license": "MIT",
     "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
+        "registry": "https://registry.npmjs.org"
     },
     "bugs": {
         "url": "https://github.com/tableflowhq/ui-library/issues"
     },
     "homepage": "https://github.com/tableflowhq/ui-library#readme",
-    "version": "1.25.0",
-    "description": "",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "files": [
