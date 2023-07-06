@@ -16,7 +16,7 @@ jobs:
           node-version: 16
       - run: yarn install
 
-  publish-github-registry:
+  publish-to-registry:
     needs: build
     runs-on: ubuntu-latest
     steps:
