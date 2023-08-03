@@ -60,7 +60,7 @@ export default function Input({ as = "input", label, icon, iconAfter, error, opt
     );
 }
 
-function Select({ options = {}, ...props }: InputProps) {
+function Select({ options = {}, placeholder, ...props }: InputProps) {
     const [open, setOpen] = useState(false);
 
     const onChangeOption = (e: any) => {
@@ -101,7 +101,14 @@ function Select({ options = {}, ...props }: InputProps) {
 
     return (
         <>
-            <input {...props} value={selectedKey} className={classes([style.select, open && style.open])} readOnly onFocus={onFocus} />
+            <input
+                {...props}
+                value={selectedKey && `${selectedKey} ${options[selectedKey]?.required ? "*" : ""}`}
+                className={classes([style.select, open && style.open])}
+                readOnly
+                onFocus={onFocus}
+                placeholder={placeholder}
+            />
 
             <div className={style.optionsRef} ref={setRef} />
 
@@ -109,6 +116,11 @@ function Select({ options = {}, ...props }: InputProps) {
                 <Portal>
                     <div className={style.options} style={optionsPosition} ref={setRefPortal}>
                         <div className={style.inner} ref={ref}>
+                            {placeholder && (
+                                <button key={-1} className={classes([style.option, style.placeholder])} onClick={onChangeOption}>
+                                    {placeholder}
+                                </button>
+                            )}
                             {Object.keys(options).map((k, i) => (
                                 <button
                                     key={k}
@@ -117,7 +129,7 @@ function Select({ options = {}, ...props }: InputProps) {
                                     {...options[k]}
                                     onClick={onChangeOption}
                                     autoFocus={i === 0}>
-                                    {k}
+                                    {k} {options[k].required && <span className={style.requiredMark}>*</span>}
                                 </button>
                             ))}
                         </div>

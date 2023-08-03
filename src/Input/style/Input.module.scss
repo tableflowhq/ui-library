@@ -196,6 +196,12 @@
             &.selected {
                 background-color: var(--color-background-menu-hover);
             }
+            &.placeholder {
+                color: var(--color-text-soft);
+            }
+        }
+        .requiredMark {
+            color: var(--color-text-error);
         }
     }
 }
