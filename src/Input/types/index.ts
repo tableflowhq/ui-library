@@ -17,7 +17,7 @@ export type inputTypes =
     | "week";
 
 export type InputVariants = "fluid" | "small";
-export type InputOption = ButtonHTMLAttributes<HTMLButtonElement> & { required: boolean };
+export type InputOption = ButtonHTMLAttributes<HTMLButtonElement> & { required?: boolean };
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> &
     InputHTMLAttributes<HTMLSelectElement> &
