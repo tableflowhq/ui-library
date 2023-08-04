@@ -103,7 +103,7 @@ function Select({ options = {}, placeholder, ...props }: InputProps) {
         <>
             <input
                 {...props}
-                value={selectedKey && `${selectedKey} ${options[selectedKey]?.required ? "*" : ""}`}
+                value={selectedKey}
                 className={classes([style.select, open && style.open])}
                 readOnly
                 onFocus={onFocus}
