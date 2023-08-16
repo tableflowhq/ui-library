@@ -89,6 +89,7 @@ const Row = ({ datum }: RowProps) => {
                     // If it is an object with the 'content' property, use that as content (can be JSX or a primitive)
                     // Another 'raw' property with a primitive value is used to sort and search
                     const content = (datum[k] as any)?.content || datum[k];
+                    const tooltip = (datum[k] as any)?.tooltip;
 
                     const wrappedContent = content && typeof content === "string" ? <span>{content}</span> : content;
 
@@ -101,7 +102,7 @@ const Row = ({ datum }: RowProps) => {
                     const cellStyle = { width: columnWidths?.[i] || "auto", textAlign: columnAlignments?.[i] || "left" };
 
                     return (
-                        <Cell key={k} cellClass={cellClass} cellStyle={cellStyle}>
+                        <Cell key={k} cellClass={cellClass} cellStyle={cellStyle} tooltip={tooltip || ""}>
                             {wrappedContent}
                         </Cell>
                     );
@@ -110,12 +111,13 @@ const Row = ({ datum }: RowProps) => {
     );
 };
 
-const Cell = ({ children, cellClass, cellStyle }: CellProps) => {
+const Cell = ({ children, cellClass, cellStyle, tooltip }: CellProps) => {
     const { style } = useContext(TableContext);
     const cellProps = {
         className: classes([style?.td, cellClass, !children && style?.empty]),
         role: "cell",
         style: cellStyle,
+        ...(tooltip ? { title: tooltip } : {}),
     };
     return <div {...cellProps}>{children}</div>;
 };

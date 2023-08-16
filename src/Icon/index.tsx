@@ -25,6 +25,7 @@ import { ReactComponent as EyeOpen } from "../assets/icons/eye-open.svg";
 import { ReactComponent as File } from "../assets/icons/file.svg";
 import { ReactComponent as Gear } from "../assets/icons/gear.svg";
 import { ReactComponent as Help } from "../assets/icons/help.svg";
+import { ReactComponent as Info } from "../assets/icons/info.svg";
 import { ReactComponent as Insert } from "../assets/icons/insert.svg";
 import { ReactComponent as Link } from "../assets/icons/link.svg";
 import { ReactComponent as LogOut } from "../assets/icons/logOut.svg";
@@ -81,6 +82,7 @@ const iconMap: IconMap = {
     link: Link,
     copy: Copy,
     file: File,
+    info: Info,
 };
 
 export default function Icon({ icon, className, size, ...props }: IconProps) {
