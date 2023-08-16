@@ -7,11 +7,7 @@ import Icon from "../Icon";
 export default function Tooltip<T extends keyof AsMap>({ as, className, title, children, ...props }: TooltipProps<T>) {
   const Tag: any = as || "span";
 
-  console.log(title);
-
   const length = getStringLengthOfChildren(title);
-
-  console.log(length);
   const wrapperClasses = classes([style.tooltip, className, length > 30 && style.multiline]);
 
   return (
