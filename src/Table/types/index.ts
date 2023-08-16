@@ -7,6 +7,7 @@ type Primitive = string | number | boolean | null | undefined;
 export type TableComposite = {
     raw: Primitive;
     content: Primitive | React.ReactElement;
+    tooltip?: string;
 };
 
 export type TableValue = Primitive | TableComposite;
@@ -40,4 +41,5 @@ export type RowProps = {
 export type CellProps = PropsWithChildren<{
     cellClass?: string;
     cellStyle: Style;
+    tooltip?: string;
 }>;

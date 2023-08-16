@@ -7,7 +7,13 @@ const storyData = [
     },
     {
         id: 2,
-        Name: "Jane Smith",
+        Name: {
+            raw: "Huge line",
+            content:
+                "Huge line with overflow. Lorem ipsum dolor sit amet. Aequam memento rebus in arduis servare mentem. Ubi fini saeculi fortunae comutatione supersunt in elipse est.",
+            tooltip:
+                "Huge line with overflow. Lorem ipsum dolor sit amet. Aequam memento rebus in arduis servare mentem. Ubi fini saeculi fortunae comutatione supersunt in elipse est.",
+        },
         Age: 30,
         Email: "jane.smith@example.com",
     },
