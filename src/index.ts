@@ -42,6 +42,7 @@ import Tableflow from "./Tableflow";
 import Tabs from "./Tabs";
 import TagEditor from "./TagEditor";
 import ThemeToggle from "./ThemeToggle";
+import Tooltip from "./Tooltip";
 
 export {
     Badge,
@@ -64,6 +65,7 @@ export {
     Tabs,
     TagEditor,
     ThemeToggle,
+    Tooltip
 };
 
 export {
