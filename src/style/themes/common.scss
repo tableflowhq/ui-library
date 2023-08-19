@@ -19,16 +19,20 @@
   --color-text-on-secondary: #{$gray-100};
   --color-text-on-secondary-disabled: #{$gray-600};
 
-  --blue-light-500: #{$blue-light-500};
+  --color-progress-bar: #{$green-600};
 
-  --color-green-ui: #{$green-600};
-
-  --color-success: (18, 183, 106, 0.88);
-  --color-green: var(--color-success); // Deprecated
-  --color-blue: #{$blue-light-500};
-  --color-red: rgba(252, 93, 93, 0.88);
-  --color-yellow: rgba(248, 203, 44, 0.88);
+  --color-success: rgba(18, 183, 106, 0.88);
+  --color-emphasis: #{$blue-light-500};
+  --color-error: rgba(252, 93, 93, 0.88);
+  --color-attention: rgba(248, 203, 44, 0.88);
 
   --color-importer-link: #2275d7;
+
+  --blue-light-500: #{$blue-light-500}; // Deprecated
+  --color-green-ui: var(--color-progress-bar); // Deprecated
+  --color-green: var(--color-success); // Deprecated
+  --color-blue: #{$blue-light-500}; // Deprecated
+  --color-red: rgba(252, 93, 93, 0.88); // Deprecated
+  --color-yellow: rgba(248, 203, 44, 0.88); // Deprecated
   --importer-link: var(--color-importer-link); // Deprecated
 }
