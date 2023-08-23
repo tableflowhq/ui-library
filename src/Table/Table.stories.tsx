@@ -24,3 +24,4 @@ Table.args = {
     hideColumns: ["id"],
     fixHeader: true,
 };
+Table.args.onRowClick = (row: any) => console.log("Row clicked", row);

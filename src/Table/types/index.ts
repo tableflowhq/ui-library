@@ -31,11 +31,13 @@ export type TableProps = {
     columnWidths?: string[];
     columnAlignments?: ("left" | "center" | "right" | "")[];
     fixHeader?: boolean;
+    onRowClick?: (row: TableDatum) => void;
 };
 
 export type RowProps = {
     datum: TableDatum;
     isHeading?: boolean;
+    onClick?: (row: TableDatum) => void;
 };
 
 export type CellProps = PropsWithChildren<{
