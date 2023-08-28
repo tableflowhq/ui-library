@@ -56,7 +56,7 @@
   .stepWide {
     &:not(:first-of-type) {
       &:before {
-        width: min(140px, 10vw);
+        width: min(120px, 10vw);
       }
     }
   }
