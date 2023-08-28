@@ -27,6 +27,7 @@ import "./style/index.scss";
 import Badge from "./Badge";
 import Box from "./Box";
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 import Dialog from "./Dialog";
 import Errors from "./Errors";
 import Icon from "./Icon";
@@ -48,6 +49,7 @@ export {
     Badge,
     Box,
     Button,
+    Checkbox,
     Dialog,
     Errors,
     Frame,
@@ -65,7 +67,7 @@ export {
     Tabs,
     TagEditor,
     ThemeToggle,
-    Tooltip
+    Tooltip,
 };
 
 export {
