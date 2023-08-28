@@ -38,12 +38,12 @@
       box-shadow: inset 1em 1em var(--color-input-background);
     }
 
-    &:not(:disabled) {
-      &:focus {
-        outline: 1px solid var(--color-border);
-        outline-offset: 3px;
-      }
-    }
+    //&:not(:disabled) {
+    //  &:focus {
+    //    outline: 1px solid var(--color-border);
+    //    outline-offset: 3px;
+    //  }
+    //}
 
     &:disabled {
       --container-color: var(--container-disabled);
