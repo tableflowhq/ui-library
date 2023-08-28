@@ -30,7 +30,7 @@
 .inputWrapper {
     background-color: var(--color-input-background);
     border-radius: var(--border-radius-2);
-    outline: 2px solid transparent;
+    outline: 1px solid transparent;
     padding: calc(var(--m-xxs) / 2);
     border: 1px solid var(--color-border);
     font-weight: 400;
@@ -172,12 +172,13 @@
         background-color: var(--color-input-background);
         border-radius: var(--border-radius-2);
         padding: var(--m-xxxxs);
-        outline: 2px solid var(--color-text);
+        outline: 1px solid var(--color-border);
         display: flex;
         flex-direction: column;
         gap: var(--m-xxxxs);
         max-height: calc(100vh - 8px);
         overflow-y: auto;
+        margin-top: var(--m-xxxxs);
     }
 
     .option {
