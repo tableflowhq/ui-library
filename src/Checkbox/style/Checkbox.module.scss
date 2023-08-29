@@ -39,7 +39,7 @@
     }
 
     &:not(:disabled) {
-      &:focus {
+      &:focus-visible {
         outline: 1px solid var(--color-border);
         outline-offset: 3px;
       }
@@ -50,6 +50,14 @@
       color: var(--container-disabled);
       cursor: default;
       background-color: var(--color-input-disabled);
+      border-color: var(--color-border-soft);
+
+      &:checked {
+        &::before {
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          box-shadow: inset 1em 1em var(--color-border-soft);
+        }
+      }
     }
   }
 }

@@ -135,6 +135,6 @@ Dropdown.args = {
         "Option III": { value: "3" },
         "Option IV": { value: "4" },
         "Option V": { value: "5" },
-        "Option V": { value: "required", required: true },
+        "Option VI": { value: "required", required: true },
     },
 };
