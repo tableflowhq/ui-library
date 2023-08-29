@@ -1,4 +1,4 @@
-const storyData = [
+export const storyData = [
     {
         id: 1,
         Name: "John Doe",
@@ -127,4 +127,37 @@ const storyData = [
     },
 ];
 
-export default storyData;
+export const storyDataTwo = [
+    {
+        id: 1,
+        firstName: "First Name First Name",
+        lastName: "Last name Last name",
+        phone: "(555) 555-5555",
+        homePhone: "(+9) 123-12345",
+        postalCode: "12345 own",
+        email: "test@example.com",
+        secondEmail: "testNumberTwo@example.com",
+        address: "123 Main St",
+        city: "Des Moines",
+        country: "Des mones",
+        State: "IA 1234",
+        zipCode: "12355",
+        owner: "Owner Owner",
+    },
+    {
+        id: 1,
+        firstName: "First Name First Name",
+        lastName: "Last name Last name",
+        phone: "(555) 555-5555",
+        homePhone: "(+9) 123-12345",
+        postalCode: "12345 own",
+        email: "test@example.com",
+        secondEmail: "testNumerTwo@example.com",
+        address: "123 Main St",
+        city: "Des Moines",
+        country: "Des mones",
+        State: "IA 1234",
+        zipCode: "12355",
+        owner: "Owner Owner",
+    },
+];

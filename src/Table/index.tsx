@@ -18,6 +18,7 @@ export default function Table({
     columnWidths = [],
     columnAlignments = [],
     fixHeader = false,
+    hasScrollX,
     onRowClick,
 }: TableProps): React.ReactElement {
     // THEME
@@ -58,7 +59,7 @@ export default function Table({
             <div className={tableStyle} role="table">
                 {headingContent}
 
-                <div className={style.tbody} role="rowgroup">
+                <div className={classes([style.tbody, hasScrollX && style.tVerticalScroll])} role="rowgroup"> 
                     {data.map((d, i) => {
                         const key = keyAsId && d?.[keyAsId] ? d[keyAsId] : i;
                         const props = { datum: d, onClick: onRowClick };
