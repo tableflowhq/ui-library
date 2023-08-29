@@ -18,6 +18,7 @@ export default function Table({
     columnWidths = [],
     columnAlignments = [],
     fixHeader = false,
+    onRowClick,
 }: TableProps): React.ReactElement {
     // THEME
     // Tables receive a full CSS module as theme or applies default styles
@@ -60,7 +61,7 @@ export default function Table({
                 <div className={style.tbody} role="rowgroup">
                     {data.map((d, i) => {
                         const key = keyAsId && d?.[keyAsId] ? d[keyAsId] : i;
-                        const props = { datum: d };
+                        const props = { datum: d, onClick: onRowClick };
                         return <Row {...props} key={key?.toString()} />;
                     })}
                 </div>
@@ -74,13 +75,13 @@ export default function Table({
     );
 }
 
-const Row = ({ datum }: RowProps) => {
+const Row = ({ datum, onClick }: RowProps) => {
     const { style, highlightColumns, hideColumns, columnWidths, columnAlignments } = useContext(TableContext);
 
     const className = classes([style?.tr]);
 
     return (
-        <div className={className} role="row">
+        <div className={className} role="row" onClick={() => onClick?.(datum)}>
             {Object.keys(datum)
                 .filter((k) => !hideColumns.includes(datum[k]) && !hideColumns.includes(k))
                 .map((k, i) => {

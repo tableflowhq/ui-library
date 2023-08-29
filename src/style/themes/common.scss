@@ -5,6 +5,7 @@
   --color-primary-hover: #{$primary-700};
   --color-primary-focus: #{$primary-600};
   --color-primary-disabled: #{$primary-200};
+  --color-primary-button-disabled: #3f3b55;
 
   --color-secondary: #{$gray-800};
   --color-secondary-hover: #{$gray-600};
@@ -15,6 +16,7 @@
 
   --color-text-on-primary: #{$base-white};
   --color-text-on-primary-disabled: #{$gray-500};
+  --color-text-on-primary-button-disabled: #{$base-white};
 
   --color-text-on-secondary: #{$gray-100};
   --color-text-on-secondary-disabled: #{$gray-600};
