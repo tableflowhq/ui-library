@@ -13,4 +13,5 @@ const Template: ComponentStory<typeof CheckboxComponent> = (args: CheckboxProps)
 export const Checkbox = Template.bind({});
 Checkbox.args = {
   label: "Text",
+  disabled: false,
 };
