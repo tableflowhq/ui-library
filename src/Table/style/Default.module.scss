@@ -43,6 +43,13 @@ $radius: var(--border-radius-2);
         padding: var(--m-xxxs) var(--m-s);
         border-bottom: 1px solid var(--color-border);
         color: var(--color-text-soft);
+
+        &:first-of-type {
+          border-radius: $radius 0 0 0;
+        }
+        &:last-child {
+          border-radius: 0 $radius 0 0;
+        }
       }
     }
   }
@@ -59,22 +66,13 @@ $radius: var(--border-radius-2);
         margin-bottom: var(--m-s);
         .td {
           background-color: var(--color-background-modal);
+
+          &:first-of-type,
+          &:last-child {
+            border-radius: 0;
+          }
         }
       }
-    }
-  }
-
-  &:not(.fixHeader) .thead {
-    .tr {
-      // .td {
-      //     &:first-of-type {
-      //         border-radius: $radius 0 0 0;
-      //     }
-
-      //     &:last-child {
-      //         border-radius: 0 $radius 0 0;
-      //     }
-      // }
     }
   }
 
@@ -101,14 +99,6 @@ $radius: var(--border-radius-2);
           padding: 0 var(--m-s);
         }
       }
-
-      // &:nth-child(odd) {
-      //   .td {
-      //     .zebra & {
-      //       background-color: var(--color-background);
-      //     }
-      //   }
-      // }
 
       &:hover {
         box-shadow: 0 0 0 2px var(--color-border);
@@ -147,6 +137,9 @@ $radius: var(--border-radius-2);
 
   &.dark {
     background-color: var(--color-background);
+    .thead .tr .td {
+      background-color: var(--color-background-modal);
+    }
   }
 
   &.light {
