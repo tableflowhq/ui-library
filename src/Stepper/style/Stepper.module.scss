@@ -52,4 +52,12 @@
       }
     }
   }
+
+  .stepWide {
+    &:not(:first-of-type) {
+      &:before {
+        width: min(120px, 10vw);
+      }
+    }
+  }
 }

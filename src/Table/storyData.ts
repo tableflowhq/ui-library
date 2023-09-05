@@ -1,7 +1,11 @@
 export const storyData = [
     {
         id: 1,
-        Name: "John Doe",
+        Name: {
+            raw: "John Doe",
+            content: "John Doe",
+            captionInfo: "This is a caption example",
+        },
         Age: 25,
         Email: "john.doe@example.com",
     },

@@ -8,6 +8,7 @@ export type TableComposite = {
     raw: Primitive;
     content: Primitive | React.ReactElement;
     tooltip?: string;
+    captionInfo?: string;
 };
 
 export type TableValue = Primitive | TableComposite;

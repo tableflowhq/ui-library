@@ -2,6 +2,8 @@ import React, { createContext, useContext } from "react";
 import classes from "../utils/classes";
 import { CellProps, RowProps, TableProps } from "./types";
 import themeDefault from "./style/Default.module.scss";
+import Tooltip from "../Tooltip";
+
 
 const TableContext = createContext<any>({});
 
@@ -32,8 +34,21 @@ export default function Table({
     // TABLE HEADINGS
     // Hide column title if the item has an action (action button) or the title starts with underscore
     const modelDatum = data?.[0];
-    const thead: any = modelDatum ? Object.keys(modelDatum).map((k) => (k.indexOf("_") === 0 ? "" : k)) : {};
+    const thead: any = modelDatum
+    ? Object.keys(modelDatum).map((k) => {
+        const value = modelDatum[k];
 
+        if (k.indexOf("_") === 0) {
+            return "";
+        }
+
+        if (typeof value === 'object' && value?.captionInfo) {
+            return { key: k, captionInfo: value.captionInfo };
+        }
+
+        return k;
+    })
+    : {};
     const context = {
         style,
         highlightColumns,
@@ -76,11 +91,10 @@ export default function Table({
     );
 }
 
-const Row = ({ datum, onClick }: RowProps) => {
+const Row = ({ datum, onClick, isHeading }: RowProps) => {
     const { style, highlightColumns, hideColumns, columnWidths, columnAlignments } = useContext(TableContext);
 
     const className = classes([style?.tr]);
-
     return (
         <div className={className} role="row" onClick={() => onClick?.(datum)}>
             {Object.keys(datum)
@@ -90,9 +104,11 @@ const Row = ({ datum, onClick }: RowProps) => {
                     // datum[k] is the content for the cell
                     // If it is an object with the 'content' property, use that as content (can be JSX or a primitive)
                     // Another 'raw' property with a primitive value is used to sort and search
-                    const content = (datum[k] as any)?.content || datum[k];
+                    let content = (datum[k] as any)?.content || datum[k];
                     const tooltip = (datum[k] as any)?.tooltip;
-
+                    const captionInfo = isHeading ? (datum[k] as any)?.captionInfo : null;
+                    const headingKey = isHeading ? (datum[k] as any)?.key : null;
+                    content = isHeading && captionInfo ? <Tooltip title={captionInfo}>{headingKey}</Tooltip> : content;
                     const wrappedContent = content && typeof content === "string" ? <span>{content}</span> : content;
 
                     const cellClass = classes([
