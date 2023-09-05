@@ -1,6 +1,6 @@
 {
     "name": "@tableflow/ui-library",
-    "version": "1.51.0",
+    "version": "1.52.0",
     "description": "A library of frontend components used by TableFlow",
     "repository": {
         "type": "git",
