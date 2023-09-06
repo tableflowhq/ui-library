@@ -22,6 +22,6 @@ export default {
 
 export const Default = (args: any) => <PillInput {...args} />;
 Default.args = {
-    label: "Label Text",
-    placeholder: "Placeholder Text",
+    label: "Pill Component",
+    placeholder: "Add and option",
 };

@@ -1,117 +1,108 @@
 @import "../../style/mixins.scss";
-
 .container {
-  margin-bottom: var(--m);
-  text-align: left;
-
-  &:only-child {
-    margin: var(--m-xxs) 0;
-  }
-
-  .label {
-    display: inline-block;
-    margin-bottom: var(--m-xxs);
-    cursor: pointer;
-    line-height: 1;
-    font-weight: 500;
-    font-family: var(--font-family-1);
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  .inputWrapper {
-    background-color: var(--color-input-background);
-  border-radius: var(--border-radius-2);
-  outline: 1px solid transparent;
-  padding: calc(var(--m-xxs) / 2);
-  border: 1px solid var(--color-border);
-  font-weight: 400;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 270px;
-  position: relative;
-
-    &:focus-within {
-      outline-color: var(--color-text);
-      z-index: 11;
-    }
-
-    &.hasError {
-      border-color: var(--color-text-error);
-    }
-
-    textarea {
-      -webkit-tap-highlight-color: transparent;
-      appearance: none;
-      resize: none;
-      width: 100%;
-      display: block;
-      padding: calc(var(--m-xxs) / 2);
-      border: none;
-      background-color: transparent;
-      flex-grow: 1;
-      min-width: 100px;
-      color: var(--color-text);
-
-      &:focus {
-        outline: none;
-      }
-
-      &::placeholder {
-        color: var(--color-text-soft);
-      }
-    }
-
-    .pill {
-      background-color: var(--color-input-background);
-      border-radius: var(--border-radius-2);
-      padding: var(--m-xxs);
-      border: 1px solid var(--color-border);
-      color: var(--color-text);
-      display: flex;
-      align-items: center;
-      margin-right: 5px;
-      margin-bottom: 5px;
-
-      &:hover {
-        border-color: var(--color-primary);
-      }
-   
-      span {
-        cursor: pointer;
-        margin-left: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        svg {
-          path {
-              stroke: var(--color-text-soft);
-          }
-      }
-
-      &:hover {
-          border-color: var(--color-border);
-
-          svg {
-              transform: scale(1.1);
-
+	margin-bottom: var(--m);
+	text-align: left;
+	&:only-child {
+		margin: var(--m-xxs) 0;
+	}
+	.label {
+		display: inline-block;
+		margin-bottom: var(--m-xxs);
+		cursor: pointer;
+		line-height: 1;
+		font-weight: 500;
+		font-family: var(--font-family-1);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.inputWrapper {
+		background-color: var(--color-input-background);
+		border-radius: var(--border-radius-2);
+		outline: 1px solid transparent;
+		padding: calc(var(--m-xxs) / 2);
+		border: 1px solid var(--color-border);
+		font-weight: 400;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		width: 270px;
+    min-height: 120px;
+    align-content: flex-start;
+		position: relative;
+		&:focus-within {
+			outline-color: var(--color-text);
+			z-index: 11;
+		}
+		&.hasError {
+			border-color: var(--color-text-error);
+		}
+		input,
+		textarea {
+			-webkit-tap-highlight-color: transparent;
+			appearance: none;
+			resize: none;
+			display: block;
+			padding: calc(var(--m-xxs) / 2);
+			border: none;
+			background-color: transparent;
+      min-width: 50px;
+			color: var(--color-text);
+			&:focus {
+				outline: none;
+			}
+			&::placeholder {
+				color: var(--color-text-soft);
+			}
+		}
+		.pill {
+			background-color: var(--color-input-background);
+			border-radius: var(--border-radius-2);
+			padding: 2px 10px;
+			border: 1px solid var(--color-border);
+			color: var(--color-text);
+			display: flex;
+			align-items: center;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			&:hover {
+				border-color: var(--color-primary);
+			}
+			span {
+				cursor: pointer;
+				margin-left: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.icon {
+          svg:not([data-stroke="no-stroke"]) {
               path {
-                  stroke: var(--color-text);
+                  stroke: currentColor;
+              }
+          }
+          svg:is([data-stroke="no-stroke"]):not([data-fill="no-fill"]) {
+              path {
+                  fill: currentColor;
               }
           }
       }
-        
-      }
-    }
-  }
+				&:hover {
+					border-color: var(--color-border);
+					svg {
+						transform: scale(1.1);
+						path {
+							stroke: var(--color-text);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .error {
-  color: var(--color-text-error);
-  margin-top: var(--m-xxs);
-  line-height: 1;
-  font-weight: 400;
+	color: var(--color-text-error);
+	margin-top: var(--m-xxs);
+	line-height: 1;
+	font-weight: 400;
 }

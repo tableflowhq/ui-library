@@ -3,4 +3,5 @@ export type PillProps = {
     className?: string;
     error?: boolean;
     variants?: string[];
+    placeholder?: string;
 };
