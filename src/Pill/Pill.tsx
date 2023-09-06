@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import style from './style/Pill.module.scss';
 import classes from '../utils/classes';
 import Icon from '../Icon';
+import { PillProps } from './types';
 
-export default function PillInput({ label, className, error, variants = [], children, ...props }: any) {
+export default function PillInput({ label, className, error, variants = [], ...props }: PillProps) {
     const Element = "input";
   const [pills, setPills] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -30,7 +31,6 @@ export default function PillInput({ label, className, error, variants = [], chil
 
   const inputWrapper = (
     <div className={classes([style.inputWrapper, error && style.hasError])}>
-        {/* <Element {...props} {...{ type: "text" }} /> */}
         {pills.map((pill, index) => (
         <div key={index} className={style.pill}>
           {pill}
@@ -44,10 +44,11 @@ export default function PillInput({ label, className, error, variants = [], chil
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        {...props}
         placeholder="Agrega una opción..."
       />
     </div>
-);
+)
 
   return (
     <div className={containerClassName}>
