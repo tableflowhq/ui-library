@@ -16,6 +16,7 @@ import { ReactComponent as Cross } from "../assets/icons/cross.svg";
 import { ReactComponent as Cube } from "../assets/icons/cube.svg";
 import { ReactComponent as Database } from "../assets/icons/database.svg";
 import { ReactComponent as Delete } from "../assets/icons/delete.svg";
+import { ReactComponent as DownloadFile } from "../assets/icons/download-file.svg";
 import { ReactComponent as Download } from "../assets/icons/download.svg";
 import { ReactComponent as Edit } from "../assets/icons/edit.svg";
 import { ReactComponent as Ellipsis } from "../assets/icons/ellipsis.svg";
@@ -43,50 +44,51 @@ import { ReactComponent as Upload } from "../assets/icons/upload.svg";
 import { ReactComponent as UserSimple } from "../assets/icons/user-simple.svg";
 
 const iconMap: IconMap = {
-    arrowDown: ArrowDown,
-    arrowHeadDown: ArrowHeadDown,
-    arrowHeadUp: ArrowHeadUp,
-    arrowUp: ArrowUp,
-    cross: Cross,
-    ellipsis: Ellipsis,
-    error: Error,
-    eyesClosed: EyeClosed,
-    eyesOpen: EyeOpen,
-    google: Google,
-    github: Github,
-    help: Help,
-    moon: Moon,
-    sun: Sun,
-    sort: Sort,
-    arrowLeft: ArrowLeft,
-    arrowRight: ArrowRight,
-    bell: Bell,
-    gear: Gear,
-    search: Search,
-    trash: Trash,
-    select: Select,
-    insert: Insert,
-    update: Update,
-    delete: Delete,
-    database: Database,
-    clock: Clock,
-    userSimple: UserSimple,
-    check: Check,
-    upload: Upload,
-    download: Download,
-    logOut: LogOut,
-    share: Share,
-    edit: Edit,
-    cube: Cube,
-    code: Code,
-    link: Link,
-    copy: Copy,
-    file: File,
-    info: Info,
+  arrowDown: ArrowDown,
+  arrowHeadDown: ArrowHeadDown,
+  arrowHeadUp: ArrowHeadUp,
+  arrowUp: ArrowUp,
+  cross: Cross,
+  ellipsis: Ellipsis,
+  error: Error,
+  eyesClosed: EyeClosed,
+  eyesOpen: EyeOpen,
+  google: Google,
+  github: Github,
+  help: Help,
+  moon: Moon,
+  sun: Sun,
+  sort: Sort,
+  arrowLeft: ArrowLeft,
+  arrowRight: ArrowRight,
+  bell: Bell,
+  gear: Gear,
+  search: Search,
+  trash: Trash,
+  select: Select,
+  insert: Insert,
+  update: Update,
+  delete: Delete,
+  database: Database,
+  clock: Clock,
+  userSimple: UserSimple,
+  check: Check,
+  upload: Upload,
+  download: Download,
+  downloadFile: DownloadFile,
+  logOut: LogOut,
+  share: Share,
+  edit: Edit,
+  cube: Cube,
+  code: Code,
+  link: Link,
+  copy: Copy,
+  file: File,
+  info: Info,
 };
 
 export default function Icon({ icon, className, size, ...props }: IconProps) {
-    const IconComponent = icon && iconMap?.[icon];
-    const iconClass = classes([style.icon, size && style?.[size], className]);
-    return IconComponent ? <IconComponent {...props} className={iconClass} /> : null;
+  const IconComponent = icon && iconMap?.[icon];
+  const iconClass = classes([style.icon, size && style?.[size], className]);
+  return IconComponent ? <IconComponent {...props} className={iconClass} /> : null;
 }
