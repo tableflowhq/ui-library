@@ -1,5 +1,7 @@
+import { ReactElement } from "react";
+
 export type PillProps = {
-  label: string;
+  label?: string | ReactElement;
   className?: string;
   error?: boolean;
   variants?: string[];

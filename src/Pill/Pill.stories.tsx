@@ -18,10 +18,10 @@ export default {
       },
     },
     initialPills: {
-        description: "Set the initial pill values in the input",
-        table: {
-            type: { summary: "string[]" },
-        },
+      description: "Set the initial pill values in the input",
+      table: {
+        type: { summary: "string[]" },
+      },
     },
   },
 };
