@@ -1,14 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "../utils/classes";
 import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-export default function PillInput({ label, className, error, variants = [], placeholder, ...props }: PillProps) {
-  const Element = "input";
+export default function PillInput({ label, className, error, variants = [], placeholder, onChange, ...props }: PillProps) {
   const [pills, setPills] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef(null);
 
   const variantStyles = classes(variants.map((c: string) => style[c]));
   const containerClassName = classes([style.container, variantStyles, className]);
@@ -35,6 +33,10 @@ export default function PillInput({ label, className, error, variants = [], plac
     }
   }
 
+  useEffect(() => {
+    onChange?.(pills);
+  }, [pills]);
+
   const handleRemovePill = (indexToRemove: any) => {
     setPills(pills.filter((_, index) => index !== indexToRemove));
   };
@@ -55,7 +57,6 @@ export default function PillInput({ label, className, error, variants = [], plac
       ))}
       <input
         type="text"
-        ref={inputRef}
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}

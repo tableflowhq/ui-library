@@ -4,4 +4,5 @@ export type PillProps = {
   error?: boolean;
   variants?: string[];
   placeholder?: string;
+  onChange?: (tokens: string[]) => void;
 };
