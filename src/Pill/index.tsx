@@ -4,7 +4,7 @@ import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange, ...props }: PillProps) {
+export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange, minHeight = "30px", ...props }: PillProps) {
   const [pills, setPills] = useState<string[]>(initialPills);
   const [inputValue, setInputValue] = useState("");
 
@@ -48,7 +48,7 @@ export default function PillInput({ label, className, error, variants = [], plac
   );
 
   const inputWrapper = (
-    <div className={classes([style.inputWrapper, error && style.hasError])}>
+    <div className={classes([style.inputWrapper, error && style.hasError])} style={{ minHeight }}>
       {pills.map((pill, index) => (
         <div key={index} className={style.pill}>
           {pill}

@@ -37,7 +37,7 @@
 
     &:focus-within {
       outline-color: var(--color-text);
-      z-index: 11;
+      z-index: 1;
     }
 
     &.hasError {

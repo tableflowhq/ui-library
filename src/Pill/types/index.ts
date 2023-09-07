@@ -8,4 +8,5 @@ export type PillProps = {
   placeholder?: string;
   onChange?: (tokens: string[]) => void;
   initialPills?: string[];
+  minHeight?: string;
 };

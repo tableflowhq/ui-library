@@ -23,6 +23,12 @@ export default {
         type: { summary: "string[]" },
       },
     },
+    minHeight: {
+      description: "Minimum height of the input",
+      table: {
+        type: { summary: "string" },
+      },
+    },
   },
 };
 
@@ -35,4 +41,5 @@ Default.args = {
   label: "Pill Component",
   placeholder: "Add options",
   initialPills: ["l_name", "l_name", "lname"],
+  minHeight: "100px",
 };
