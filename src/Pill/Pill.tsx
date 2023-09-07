@@ -28,6 +28,13 @@ export default function PillInput({ label, className, error, variants = [], plac
     }
   };
 
+  const onBlur = () => {
+    if (inputValue.trim()) {
+      setPills([...pills, inputValue.trim()]);
+      setInputValue("");
+    }
+  }
+
   const handleRemovePill = (indexToRemove: any) => {
     setPills(pills.filter((_, index) => index !== indexToRemove));
   };
@@ -52,6 +59,7 @@ export default function PillInput({ label, className, error, variants = [], plac
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
+        onBlur={onBlur}
         placeholder={pills.length === 0 ? placeholder : ""}
         style={{ width: pills.length ? `${inputValue.length + 1}ch` : "100%" }}
         {...props}
