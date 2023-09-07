@@ -5,4 +5,5 @@ export type PillProps = {
   variants?: string[];
   placeholder?: string;
   onChange?: (tokens: string[]) => void;
+  initialPills?: string[];
 };
