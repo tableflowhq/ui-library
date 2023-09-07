@@ -4,8 +4,8 @@ import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-export default function PillInput({ label, className, error, variants = [], placeholder, onChange, ...props }: PillProps) {
-  const [pills, setPills] = useState<string[]>([]);
+export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange, ...props }: PillProps) {
+  const [pills, setPills] = useState<string[]>(initialPills);
   const [inputValue, setInputValue] = useState("");
 
   const variantStyles = classes(variants.map((c: string) => style[c]));

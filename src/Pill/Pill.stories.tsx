@@ -17,6 +17,12 @@ export default {
         type: { summary: "string" },
       },
     },
+    initialPills: {
+        description: "Set the initial pill values in the input",
+        table: {
+            type: { summary: "string[]" },
+        },
+    },
   },
 };
 
@@ -24,4 +30,5 @@ export const Default = (args: any) => <PillInput {...args} />;
 Default.args = {
   label: "Pill Component",
   placeholder: "Add options",
+  initialPills: ["l_name", "l_name", "lname"],
 };
