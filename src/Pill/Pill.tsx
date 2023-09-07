@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
-import style from "./style/Pill.module.scss";
+import { useRef, useState } from "react";
 import classes from "../utils/classes";
-import Icon from "../Icon";
 import { PillProps } from "./types";
+import style from "./style/Pill.module.scss";
+import Icon from "../Icon";
+
 
 export default function PillInput({
   label,
@@ -34,6 +35,9 @@ export default function PillInput({
       setInputValue("");
       event.preventDefault();
     }
+    if(event.key === "Backspace" && !inputValue) {
+      handleRemovePill(pills.length - 1);
+    }
   };
 
   const handleRemovePill = (indexToRemove: any) => {
@@ -51,9 +55,7 @@ export default function PillInput({
       {pills.map((pill, index) => (
         <div key={index} className={style.pill}>
           {pill}
-          <span onClick={() => handleRemovePill(index)}>
-            {iconElement}
-          </span>
+          <span onClick={() => handleRemovePill(index)}>{iconElement}</span>
         </div>
       ))}
       <input
@@ -63,6 +65,7 @@ export default function PillInput({
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
         placeholder={pills.length === 0 ? placeholder : ""}
+        style={{ width: pills.length ? `${inputValue.length + 1}ch` : "100%" }}
         {...props}
       />
     </div>
