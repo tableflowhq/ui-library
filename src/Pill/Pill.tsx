@@ -4,38 +4,26 @@ import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-
-export default function PillInput({
-  label,
-  className,
-  error,
-  variants = [],
-  placeholder,
-  ...props
-}: PillProps) {
+export default function PillInput({ label, className, error, variants = [], placeholder, ...props }: PillProps) {
   const Element = "input";
   const [pills, setPills] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
   const variantStyles = classes(variants.map((c: string) => style[c]));
-  const containerClassName = classes([
-    style.container,
-    variantStyles,
-    className,
-  ]);
+  const containerClassName = classes([style.container, variantStyles, className]);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
   };
 
   const handleKeyDown = (event: any) => {
-    if ([" ", "Enter"].includes(event.key) && inputValue.trim()) {
+    if ([",", "Enter"].includes(event.key) && inputValue.trim()) {
       setPills([...pills, inputValue.trim()]);
       setInputValue("");
       event.preventDefault();
     }
-    if(event.key === "Backspace" && !inputValue) {
+    if (event.key === "Backspace" && !inputValue) {
       handleRemovePill(pills.length - 1);
     }
   };
@@ -44,10 +32,10 @@ export default function PillInput({
     setPills(pills.filter((_, index) => index !== indexToRemove));
   };
 
-    const iconElement = (
-      <span className={style.icon}>
-          <Icon icon='cross' />
-      </span>
+  const iconElement = (
+    <span className={style.icon}>
+      <Icon icon="cross" />
+    </span>
   );
 
   const inputWrapper = (
