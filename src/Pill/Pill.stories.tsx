@@ -1,5 +1,5 @@
 import React from "react";
-import PillInput from "./Pill";
+import PillInput from "./index";
 
 export default {
   title: "User Interface/Pill",

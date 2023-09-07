@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import classes from "../utils/classes";
 import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
@@ -31,7 +31,7 @@ export default function PillInput({ label, className, error, variants = [], plac
       setPills([...pills, inputValue.trim()]);
       setInputValue("");
     }
-  }
+  };
 
   useEffect(() => {
     onChange?.(pills);
