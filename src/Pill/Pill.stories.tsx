@@ -26,7 +26,11 @@ export default {
   },
 };
 
-export const Default = (args: any) => <PillInput {...args} />;
+export const Default = (args: any) => (
+  <div style={{ width: "350px" }}>
+    <PillInput {...args} />
+  </div>
+);
 Default.args = {
   label: "Pill Component",
   placeholder: "Add options",
