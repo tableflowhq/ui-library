@@ -37,7 +37,7 @@
 
     &:focus-within {
       outline-color: var(--color-text);
-      z-index: 11;
+      z-index: 1;
     }
 
     &.hasError {
@@ -77,10 +77,6 @@
 
       &first-child {
         margin-left: 0;
-      }
-
-      &:hover {
-        border-color: var(--color-primary);
       }
 
       span {

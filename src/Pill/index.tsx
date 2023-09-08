@@ -4,12 +4,12 @@ import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange, ...props }: PillProps) {
+export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange,...props }: PillProps) {
   const [pills, setPills] = useState<string[]>(initialPills);
   const [inputValue, setInputValue] = useState("");
 
   const variantStyles = classes(variants.map((c: string) => style[c]));
-  const containerClassName = classes([style.container, variantStyles, className]);
+  const inputWrapperClassName = classes([style.inputWrapper, variantStyles, className]);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
@@ -48,7 +48,7 @@ export default function PillInput({ label, className, error, variants = [], plac
   );
 
   const inputWrapper = (
-    <div className={classes([style.inputWrapper, error && style.hasError])}>
+    <div className={classes([inputWrapperClassName, error && style.hasError])}>
       {pills.map((pill, index) => (
         <div key={index} className={style.pill}>
           {pill}
@@ -62,14 +62,14 @@ export default function PillInput({ label, className, error, variants = [], plac
         onKeyDown={handleKeyDown}
         onBlur={onBlur}
         placeholder={pills.length === 0 ? placeholder : ""}
-        style={{ width: pills.length ? `${inputValue.length + 1}ch` : "100%" }}
+        style={{ width: pills.length ? `${inputValue.length + 1.5}ch` : "100%" }}
         {...props}
       />
     </div>
   );
 
   return (
-    <div className={containerClassName}>
+    <div className={style.container}>
       <label>
         {label ? <span className={style.label}>{label}</span> : null}
         {inputWrapper}
