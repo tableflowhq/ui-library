@@ -29,6 +29,12 @@ export default {
         type: { summary: "string" },
       },
     },
+    error: {
+      description: "Error message to show below the input",
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
   },
 };
 
@@ -42,4 +48,5 @@ Default.args = {
   placeholder: "Add options",
   initialPills: ["l_name", "l_name", "lname"],
   minHeight: "100px",
+  error: false,
 };

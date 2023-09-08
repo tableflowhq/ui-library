@@ -4,12 +4,12 @@ import { PillProps } from "./types";
 import style from "./style/Pill.module.scss";
 import Icon from "../Icon";
 
-export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange, minHeight = "30px", ...props }: PillProps) {
+export default function PillInput({ label, className, error, variants = [], placeholder, initialPills = [], onChange,...props }: PillProps) {
   const [pills, setPills] = useState<string[]>(initialPills);
   const [inputValue, setInputValue] = useState("");
 
   const variantStyles = classes(variants.map((c: string) => style[c]));
-  const containerClassName = classes([style.container, variantStyles, className]);
+  const inputWrapperClassName = classes([style.inputWrapper, variantStyles, className]);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
@@ -48,7 +48,7 @@ export default function PillInput({ label, className, error, variants = [], plac
   );
 
   const inputWrapper = (
-    <div className={classes([style.inputWrapper, error && style.hasError])} style={{ minHeight }}>
+    <div className={classes([inputWrapperClassName, error && style.hasError])}>
       {pills.map((pill, index) => (
         <div key={index} className={style.pill}>
           {pill}
@@ -69,7 +69,7 @@ export default function PillInput({ label, className, error, variants = [], plac
   );
 
   return (
-    <div className={containerClassName}>
+    <div className={style.container}>
       <label>
         {label ? <span className={style.label}>{label}</span> : null}
         {inputWrapper}
