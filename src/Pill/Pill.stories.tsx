@@ -23,12 +23,6 @@ export default {
         type: { summary: "string[]" },
       },
     },
-    minHeight: {
-      description: "Minimum height of the input",
-      table: {
-        type: { summary: "string" },
-      },
-    },
     error: {
       description: "Error message to show below the input",
       table: {
@@ -47,6 +41,5 @@ Default.args = {
   label: "Pill Component",
   placeholder: "Add options",
   initialPills: ["l_name", "l_name", "lname"],
-  minHeight: "100px",
   error: false,
 };
