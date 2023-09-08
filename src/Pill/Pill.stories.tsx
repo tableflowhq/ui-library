@@ -29,17 +29,34 @@ export default {
         type: { summary: "boolean" },
       },
     },
+    className: {
+      description: "CSS class",
+      table: {
+        type: { summary: "string" },
+      },
+    },
   },
 };
 
 export const Default = (args: any) => (
-  <div style={{ width: "350px" }}>
-    <PillInput {...args} />
-  </div>
+  <>
+   <style>
+      {`
+        .customClass {
+          min-height: 90px !important;
+        }
+      `}
+    </style>
+    <div style={{ width: "350px" }}>
+      <PillInput {...args} />
+    </div>
+  </>
+  
 );
 Default.args = {
   label: "Pill Component",
   placeholder: "Add options",
   initialPills: ["l_name", "l_name", "lname"],
   error: false,
+  className: "customClass",
 };

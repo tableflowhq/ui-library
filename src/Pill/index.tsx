@@ -62,7 +62,7 @@ export default function PillInput({ label, className, error, variants = [], plac
         onKeyDown={handleKeyDown}
         onBlur={onBlur}
         placeholder={pills.length === 0 ? placeholder : ""}
-        style={{ width: pills.length ? `${inputValue.length + 1}ch` : "100%" }}
+        style={{ width: pills.length ? `${inputValue.length + 1.5}ch` : "100%" }}
         {...props}
       />
     </div>
