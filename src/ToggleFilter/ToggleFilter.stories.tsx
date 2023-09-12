@@ -2,7 +2,7 @@ import React from 'react';
 import ToggleFilter from './index';
 
 export default {
-  title: 'Components/ToggleFilter',
+  title: 'User Interface/ToggleFilter',
   component: ToggleFilter,
   argTypes: {
     options: {
