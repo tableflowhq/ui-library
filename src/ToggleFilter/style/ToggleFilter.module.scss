@@ -1,0 +1,20 @@
+.toggleFilter {
+    display: flex;
+    align-items: center;
+    background-color: #1e2839;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 36px;
+  }
+  
+  .toggleOption {
+    padding: 8px 16px 8px 16px;
+    cursor: pointer;
+    
+    &.selected {
+        background-color: #FFF;
+        border-radius: 20px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+  }
+  
