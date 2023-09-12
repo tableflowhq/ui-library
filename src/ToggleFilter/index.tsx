@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import style from './style/ToggleFilter.module.scss';
 import { Option, ToggleFilterProps } from './types';
+import classes from "../utils/classes";
 
-function ToggleFilter({ options, onChange }: ToggleFilterProps) {
+function ToggleFilter({ options, onChange,  className }: ToggleFilterProps) {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
+    const toggleFilterClassName = classes([style.toggleFilter, className]);
 
     useEffect(() => {
         const defaultSelected = options.find(option => option.selected);
@@ -25,16 +27,20 @@ function ToggleFilter({ options, onChange }: ToggleFilterProps) {
       }
   
     return (
-        <div className={style.toggleFilter}>
+        <div className={toggleFilterClassName}>
           {options.map((option, index) => (
-            <div 
-              key={index} 
-              className={`${style.toggleOption} ${selectedOption === option.label ? style.selected : ''}`}
+            <button 
+              key={option.label} 
+              className={classes([
+                style.toggleOption, 
+                selectedOption === option.label && style.selected,
+                option.color && style[option.color]
+                ])}
               onClick={() => handleClick(option)}
               style={{ color: getOptionColor(option) }}
             >
               {option.label}
-            </div>
+           </button>
           ))}
         </div>
       );

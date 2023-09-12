@@ -1,18 +1,18 @@
 .toggleFilter {
     display: flex;
     align-items: center;
-    background-color: var(--color-background-tertiary);
+    background-color: var(--color-input-background);
     border-radius: 20px;
     overflow: hidden;
     min-height: 36px;
   }
   
   .toggleOption {
-    padding: 8px 16px 8px 16px;
+    padding: 8px 16px;
     cursor: pointer;
     
     &.selected {
-        background-color: var(--color-toggle-selected);
+        background-color: var(--color-text-on-tertiary);
         border-radius: 20px;
         transition: background-color 0.2s, color 0.2s;
     }

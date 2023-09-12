@@ -6,5 +6,6 @@ export interface Option {
   
  export interface ToggleFilterProps {
     options: Option[];
+    className?: string;
     onChange: (option: string) => void;
   }
