@@ -16,6 +16,13 @@ function ToggleFilter({ options, onChange }: ToggleFilterProps) {
           onChange(option.label);
         }
       };
+
+      const getOptionColor = (option: Option) => {
+        if (option.color) {
+            return option.color;
+        }
+        return selectedOption === option.label ? 'var(--color-tertiary)' : 'var(--color-text)';
+      }
   
     return (
         <div className={style.toggleFilter}>
@@ -24,7 +31,7 @@ function ToggleFilter({ options, onChange }: ToggleFilterProps) {
               key={index} 
               className={`${style.toggleOption} ${selectedOption === option.label ? style.selected : ''}`}
               onClick={() => handleClick(option)}
-              style={{ color: option.color || (selectedOption === option.label ? '#101828' : '#D0D5DD') }}
+              style={{ color: getOptionColor(option) }}
             >
               {option.label}
             </div>

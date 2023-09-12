@@ -10,6 +10,7 @@
   --color-background-modal-veil: #0e1116;
   --color-background-modal-shadow: transparent;
   --color-background-modal-shade: #{$gray-100};
+  --color-background-tertiary: #{$gray-100};
 
   --color-tertiary: #{$base-white};
   --color-tertiary-hover: #{$gray-100};
@@ -81,4 +82,8 @@
 
   --color-stepper: #{$gray-cool-300};
   --color-stepper-active: #{$success-300};
+
+  // TOGGLE 
+
+  --color-toggle-selected: #{$gray-900};
 }

@@ -1,7 +1,7 @@
 .toggleFilter {
     display: flex;
     align-items: center;
-    background-color: #1e2839;
+    background-color: var(--color-background-tertiary);
     border-radius: 20px;
     overflow: hidden;
     min-height: 36px;
@@ -12,9 +12,13 @@
     cursor: pointer;
     
     &.selected {
-        background-color: #FFF;
+        background-color: var(--color-toggle-selected);
         border-radius: 20px;
         transition: background-color 0.2s, color 0.2s;
+    }
+
+    .defaultColor {
+        color: var(--color-text);
     }
   }
   
