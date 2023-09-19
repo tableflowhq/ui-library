@@ -4,7 +4,7 @@ import { AsMap, TooltipProps } from "./types";
 import style from "./style/Tooltip.module.scss";
 import Icon from "../Icon";
 
-export default function Tooltip<T extends keyof AsMap>({ as, className, title, children, ...props }: TooltipProps<T>) {
+export default function Tooltip<T extends keyof AsMap>({ as, className, title, children, icon = "info", ...props }: TooltipProps<T>) {
   const Tag: any = as || "span";
 
   const length = getStringLengthOfChildren(title);
@@ -14,7 +14,7 @@ export default function Tooltip<T extends keyof AsMap>({ as, className, title, c
     <Tag {...props} className={wrapperClasses}>
       {children}
       <span className={style.icon}>
-        <Icon icon="info" />
+        <Icon icon={icon} />
         <span className={style.message}>{title}</span>
       </span>
     </Tag>

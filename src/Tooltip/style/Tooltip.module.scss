@@ -28,7 +28,7 @@ $height: calc($side * 1.732);
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color-background-modal);
-    z-index: 2;
+    z-index: 3;
     padding: var(--m-xxs) var(--m-xs);
     border-radius: var(--border-radius);
     display: none;
