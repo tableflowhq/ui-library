@@ -3,8 +3,8 @@ import { BoxProps } from "./types";
 import style from "./style/Box.module.scss";
 
 export default function Box({ className, variants = [], ...props }: BoxProps) {
-    const variantStyles = classes(variants.map((c: string) => style[c]));
-    const containerClasses = classes([style.box, variantStyles, className]);
+  const variantStyles = classes(variants.map((c: string) => style[c]));
+  const containerClasses = classes([style.box, variantStyles, className]);
 
-    return <div {...props} className={containerClasses} />;
+  return <div {...props} className={containerClasses} />;
 }

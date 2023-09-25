@@ -27,6 +27,7 @@ import "./style/index.scss";
 import Badge from "./Badge";
 import Box from "./Box";
 import Button from "./Button";
+import theme from "./Chakra";
 import Checkbox from "./Checkbox";
 import Dialog from "./Dialog";
 import Errors from "./Errors";
@@ -103,3 +104,5 @@ export {
   validateEmails,
   validatePassword,
 };
+
+export { theme };
