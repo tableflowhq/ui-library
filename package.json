@@ -90,6 +90,7 @@
         "zustand": "^4.3.8"
     },
     "dependencies": {
+        "@tableflow/ui-library": "file:.yalc/@tableflow/ui-library",
         "babel-plugin-inline-react-svg": "^2.0.2",
         "tslib": "^2.5.3"
     }
