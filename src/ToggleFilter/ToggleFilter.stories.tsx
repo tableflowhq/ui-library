@@ -17,9 +17,9 @@ export default {
 export const Default = () => (
   <ToggleFilter 
     options={[
-      { label: 'Option 1', selected: true },
-      { label: 'Option 2', selected: false },
-      { label: 'Option 3', selected: false, color: "#F04438" }
+      { label: 'Option 1', filterValue: 'One', selected: true },
+      { label: 'Option 2', filterValue: 'Two', selected: false },
+      { label: 'Option 3', filterValue: 'Three', selected: false, color: "#F04438" }
     ]}
     onChange={(option) => console.log(option)}
   />
@@ -28,8 +28,8 @@ export const Default = () => (
 export const WithCustomOptions = () => (
   <ToggleFilter 
     options={[
-      { label: 'Custom 1', selected: false },
-      { label: 'Custom 2', selected: true }
+      { label: 'Custom 1', filterValue: 'One', selected: false },
+      { label: 'Custom 2', filterValue: 'Two', selected: true }
     ]}
     onChange={(option) => console.log(option)}
   />
