@@ -14,13 +14,6 @@ $height: calc($side * 1.732);
       display: block;
       cursor: pointer;
     }
-
-    // &:hover,
-    // &:active {
-    //   .message {
-    //     display: block;
-    //   }
-    // }
   }
 
   &.multiline .message {
@@ -32,8 +25,6 @@ $height: calc($side * 1.732);
 
 .message {
   position: absolute;
-  // top: 100%;
-  // left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-background-modal);
   z-index: 3;
