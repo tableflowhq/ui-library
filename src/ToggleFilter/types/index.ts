@@ -1,5 +1,6 @@
 export interface Option {
     label: string;
+    filterValue: string,
     selected: boolean;
     color?: string;
   }

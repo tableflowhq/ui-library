@@ -15,7 +15,7 @@ function ToggleFilter({ options, onChange,  className }: ToggleFilterProps) {
       const handleClick = (option: Option) => {
         setSelectedOption(option.label);
         if (onChange) {
-          onChange(option.label);
+          onChange(option.filterValue);
         }
       };
 
