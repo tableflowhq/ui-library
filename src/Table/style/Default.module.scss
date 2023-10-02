@@ -38,11 +38,11 @@ $radius: var(--border-radius-2);
       margin-bottom: var(--m-s);
 
       .td {
-        font-weight: 600;
+        font-weight: 400;
         white-space: nowrap;
         padding: var(--m-xxxs) var(--m-s);
         border-bottom: 1px solid var(--color-border);
-        color: var(--color-text-soft);
+        color: var(--color-text-secondary);
 
         &:first-of-type {
           border-radius: $radius 0 0 0;
