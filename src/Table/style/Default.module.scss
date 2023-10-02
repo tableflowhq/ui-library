@@ -56,7 +56,7 @@ $radius: var(--border-radius-2);
 
   &.fixHeader {
     border-radius: 0 0 $radius $radius;
-    .thead {
+    .thead, .caption {
       position: sticky;
       top: 0;
       z-index: 1;
