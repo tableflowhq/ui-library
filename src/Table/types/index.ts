@@ -32,6 +32,7 @@ export type TableProps = {
     columnWidths?: string[];
     columnAlignments?: ("left" | "center" | "right" | "")[];
     fixHeader?: boolean;
+    hasScrollX?: boolean;
     onRowClick?: (row: TableDatum) => void;
 };
 

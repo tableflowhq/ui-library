@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import TableComponent from ".";
 import { TableProps } from "./types";
-import storyData from "./storyData";
+import { storyData, storyDataTwo } from "./storyData";
 
 export default {
     title: "User Interface/Table",
@@ -24,4 +24,15 @@ Table.args = {
     hideColumns: ["id"],
     fixHeader: true,
 };
+
+export const TableVScroll = Template.bind({});
+TableVScroll.args = {
+    data: storyDataTwo,
+    highlightColumns: ["Name"],
+    hideColumns: ["id"],
+    fixHeader: true,
+    heading: <div style={{ textAlign: "center" }}>Header row</div>,
+    hasScrollX: true,
+};
+
 Table.args.onRowClick = (row: any) => console.log("Row clicked", row);

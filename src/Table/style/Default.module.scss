@@ -165,6 +165,11 @@ $radius: var(--border-radius-2);
       }
     }
   }
+
+    .horizontalScroll {
+        display: table-cell;
+        overflow-x: auto;
+    }
 }
 
 .emptyMsg {
